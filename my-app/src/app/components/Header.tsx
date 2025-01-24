@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <nav className="fixed lg:w-full bg-black border-gray-200 shadow-md">
+    <nav className="fixed lg:w-full bg-black border-gray-200 shadow-md z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link
           href="https://flowbite.com/"

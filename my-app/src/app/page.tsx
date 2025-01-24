@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Header from "./components/Header";
 
 export default function Home() {
-  useEffect(() = {
+  useEffect(() => {
     AOS.init({
       duration: 900,
       once: true,
@@ -16,8 +16,8 @@ export default function Home() {
   return (
     <>
     <Header/>
-    <div className="flex flex-col relative min-h-screen font-[family-name:var(--font-geist-sans)]">
-      
+    <div className="flex flex-col relative font-[family-name:var(--font-geist-sans)]">
+    
       <section className="relative flex justify-between max-md:flex-col max-md:gap-12 max-md:min-h-[1000px] min-h-screen bg-dark pt-20">
           <Image
             src={bebekku}
@@ -31,8 +31,7 @@ export default function Home() {
               <h2
                 data-aos="fade-down"
                 className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold">
-                Bingung kirim barang-barang besar solusinya hanya disini, kirim
-                barang tanpa harus ribet dan mahal
+                Platform Try Out Online Terlengkap dan Terpercaya di Indonesia. Bantu siswa dan guru mencari soal-soal latihan yang sesuai dengan kebutuhan mereka.
               </h2>
              </div>
           </div>

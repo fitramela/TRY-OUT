@@ -1,8 +1,10 @@
 import Card from "../components/Card";
+import Header from "../components/Header";
 
 export default function Services (){
 
-    return (
+    return (<>  
+    <Header/>
         <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           We invest in the world’s potential
@@ -43,6 +45,7 @@ export default function Services (){
         </div>
     
       </div>
+    </>
       
     )
 }
