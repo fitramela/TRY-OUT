@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Header from "./components/Header";
 import ChatWhatApp from "./lib/ChatWhatApp";
 import { Accessibility } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   useEffect(() => {
@@ -37,7 +38,8 @@ export default function Home() {
                 Bantu siswa dan guru mencari soal-soal latihan yang sesuai
                 dengan kebutuhan mereka.
               </h2>
-              <button
+              <Link
+                href="test"
                 data-aos="fade-down"
                 className="mt-6 px-10 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition duration-300"
               >
@@ -47,7 +49,7 @@ export default function Home() {
                 Get Started
                 </p>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
         </section>

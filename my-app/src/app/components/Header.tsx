@@ -2,21 +2,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import ChatWhatApp from "../lib/ChatWhatApp";
+import logo from "../images/logo-go.png"
 
 export default function Header() {
   return (
     <nav className="fixed lg:w-full bg-black border-gray-200 shadow-md z-50">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-0">
         <Link
           href="https://flowbite.com/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
-            src="/images/logo.webp"
-            className="h-8"
+            src={logo}
+            className="h-12"
             alt="GoTO-0.2 Logo"
-            width={20}
-            height={20}
+            width={50}
+            height={30}
           />
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-orange-500">
             GoTO-0.2
