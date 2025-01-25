@@ -1,6 +1,7 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-
+import ChatWhatApp from "../lib/ChatWhatApp";
 
 export default function Header() {
   return (
@@ -11,7 +12,7 @@ export default function Header() {
           className="flex items-center space-x-3 rtl:space-x-reverse"
         >
           <Image
-            src="/images/bebekku.jpg"
+            src="/images/logo.webp"
             className="h-8"
             alt="GoTO-0.2 Logo"
             width={20}
@@ -22,12 +23,17 @@ export default function Header() {
           </span>
         </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button
-            type="button"
-            className="text-black bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
+          <ChatWhatApp
+            phone="+6285219832085"
+            message="Hi,, saya mau join TO nya dong"
           >
-            Get started
-          </button>
+            <button
+              type="button"
+              className="text-black bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center"
+            >
+              Get Our WhatApp
+            </button>
+          </ChatWhatApp>
           <button
             data-collapse-toggle="navbar-cta"
             type="button"
@@ -61,7 +67,7 @@ export default function Header() {
             <li>
               <Link
                 href="/"
-                className="block py-2 px-3 md:p-0 text-orange-500 rounded md:bg-transparent"
+                className="block py-2 px-3 md:p-0 text-gray-300 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-orange-500"
                 aria-current="page"
               >
                 Home

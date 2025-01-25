@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
 import Image from "next/image";
-import bebekku from "./images/bebekku.jpg"
-import AOS from "aos"
+import bebekku from "./images/bebekku.jpg";
+import AOS from "aos";
 import { useEffect } from "react";
 import Header from "./components/Header";
+import ChatWhatApp from "./lib/ChatWhatApp";
+import { Accessibility } from "lucide-react";
 
 export default function Home() {
   useEffect(() => {
@@ -15,10 +17,9 @@ export default function Home() {
   }, []);
   return (
     <>
-    <Header/>
-    <div className="flex flex-col relative font-[family-name:var(--font-geist-sans)]">
-    
-      <section className="relative flex justify-between max-md:flex-col max-md:gap-12 max-md:min-h-[1000px] min-h-screen bg-dark pt-20">
+      <Header />
+      <div className="flex flex-col relative font-[family-name:var(--font-geist-sans)]">
+        <section className="relative flex justify-between max-md:flex-col max-md:gap-12 max-md:min-h-[1000px] min-h-screen bg-dark pt-20">
           <Image
             src={bebekku}
             alt="Cargo Truck"
@@ -30,16 +31,27 @@ export default function Home() {
             <div className=" max-md:w-full max-md:mt-44 px-20 max-md:items-center max-md:px-5 max-md:gap-5 flex flex-col items-start justify-center  max-md:justify-center text-center">
               <h2
                 data-aos="fade-down"
-                className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold">
-                Platform Try Out Online Terlengkap dan Terpercaya di Indonesia. Bantu siswa dan guru mencari soal-soal latihan yang sesuai dengan kebutuhan mereka.
+                className="text-5xl max-w-3xl max-md:text-3xl max-md:max-w-lg text-start text-white font-bold"
+              >
+                Platform Try Out Online Terlengkap dan Terpercaya di Indonesia.
+                Bantu siswa dan guru mencari soal-soal latihan yang sesuai
+                dengan kebutuhan mereka.
               </h2>
-             </div>
+              <button
+                data-aos="fade-down"
+                className="mt-6 px-10 py-3 bg-orange-500 text-white font-semibold rounded-full shadow-lg hover:bg-orange-600 transition duration-300"
+              >
+                <div className="flex gap-3 items-center">
+                <Accessibility className="size-10"/>
+                <p className="text-lg tracking-tight font-[800]">
+                Get Started
+                </p>
+                </div>
+              </button>
+            </div>
           </div>
-          
         </section>
-      
-      
-    </div>
+      </div>
     </>
   );
 }
