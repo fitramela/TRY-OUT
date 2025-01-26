@@ -36,7 +36,7 @@ export default function Banner (){
       <span>
         Get 5% commission per sale{" "}
         <a
-          href="https://flowbite.com"
+          href="/"
           className="flex items-center ms-0 text-sm font-medium text-blue-600 md:ms-1 md:inline-flex dark:text-blue-500 hover:underline"
         >
           Become a partner{" "}

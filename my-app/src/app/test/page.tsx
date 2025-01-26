@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const QuizPage = () => {
@@ -281,6 +282,22 @@ const QuizPage = () => {
               </li>
             ))}
           </ul>
+          <div className="mt-4">
+            <button
+              onClick={() => setShowResults(false)}
+              className="py-2 px-4 bg-orange-500 text-white rounded-lg shadow-md"
+            >
+              Back
+            </button>
+          </div>
+          <div className="mt-4">
+            <Link
+              href="/"
+              className="py-2 px-4 bg-orange-500 text-white rounded-lg shadow-md"
+            >
+              Go to HomaPage
+            </Link>
+          </div>
         </div>
       ) : (
         <>
