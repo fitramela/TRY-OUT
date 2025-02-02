@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import ChatWhatApp from "./lib/ChatWhatApp";
 import { Accessibility } from "lucide-react";
 import Link from "next/link";
+import Login from "./components/LoginCard";
 
 export default function Home() {
   useEffect(() => {
@@ -51,9 +52,17 @@ export default function Home() {
                 </div>
               </Link>
             </div>
+            <div className="md:hidden flex justify-center items-center mt-10">
+              <Login/>
+            </div>
+            <div className="w-[40%] max-md:hidden max-md:mt-0 flex justify-center items-center">
+              <Login />
+            </div>
           </div>
         </section>
       </div>
     </>
   );
 }
+
+

@@ -244,7 +244,7 @@ const QuizPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center p-4">
+    <div className="min-h-screen bg-gray-900 flex flex-col items-center p-4 ">
       {/* Timer */}
       {!showResults && (
         <div className="w-full max-w-4xl mb-4">
@@ -264,7 +264,7 @@ const QuizPage = () => {
 
       {/* Hasil Tes */}
       {showResults ? (
-        <div className="w-full max-w-4xl bg-gray-800 p-6 rounded-2xl shadow-lg">
+        <div className="w-full max-w-4xl bg-gray-800 p-6 rounded-2xl shadow-lg text-white">
           <h2 className="text-2xl font-bold mb-4">Hasil Tes</h2>
           <p className="mb-4">Skor Anda: {calculateScore()} / {questions.length}</p>
           <h3 className="text-xl font-semibold mb-4">Pembahasan:</h3>
@@ -302,7 +302,7 @@ const QuizPage = () => {
       ) : (
         <>
           {/* Card Soal */}
-          <div className="w-full max-w-4xl grid grid-cols-12 gap-4">
+          <div className="w-full max-w-4xl grid grid-cols-12 gap-4 text-white">
             {/* Sidebar Nomor Soal */}
             <div className="col-span-3 space-y-2">
               {questions.map((_, index) => (
@@ -311,7 +311,7 @@ const QuizPage = () => {
                   className={`w-full py-2 px-4 rounded-lg border text-center ${
                     answers[index]
                       ? "bg-orange-500 text-white"
-                      : "bg-gray-700"
+                      : "bg-gray-700 text-orange-500" 
                   }`}
                   onClick={() => goToQuestion(index)}
                 >
@@ -333,7 +333,7 @@ const QuizPage = () => {
                     className={`w-full py-2 px-4 rounded-lg border text-left ${
                       answers[currentQuestionIndex] === option
                         ? "bg-orange-500 text-white"
-                        : "bg-gray-700"
+                        : "bg-gray-700 text-white" 
                     }`}
                     onClick={() => handleAnswer(option)}
                   >
