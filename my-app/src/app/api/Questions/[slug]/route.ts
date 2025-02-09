@@ -1,27 +1,29 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import {supabase} from '../../../db/supabase';
+import { NextRequest, NextResponse } from 'next/server';
 
 // Interface untuk Soal
-interface Question {
+export interface Question {
   id: number;
   relation: string;
   question: string;
   options: string[];
-  correctAnswer: string;
+  correctanswer: string;
   image: string;
   explanation: string;
 }
 
 // API Handler untuk mengambil soal berdasarkan 'relation'
-export async function GET(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
-  const { relation } = req.query;
+export async function GET (
+  req: NextRequest,
 
+  { params }: { params: { slug: string } },
+) {
+  const relation = params.slug;
+  console.log(relation, params)
   // Validasi input
   if (typeof relation !== 'string') {
-    return res.status(400).json({ error: 'Invalid relation parameter' });
+    return NextResponse.json({ error: 'Invalid relation parameter' });
   }
 
   try {
@@ -33,17 +35,17 @@ export async function GET(
 
     if (error) {
       console.error('Error fetching questions:', error);
-      return res.status(500).json({ error: 'Error fetching data' });
+      return NextResponse.json({ error: 'Error fetching data' });
     }
 
     if (!data || data.length === 0) {
-      return res.status(404).json({ message: 'No questions found' });
+      return NextResponse.json({ message: 'No questions found' });
     }
 
     // Kirim data soal sebagai response
-    return res.status(200).json(data);
+    return NextResponse.json(data);
   } catch (error) {
     console.error('Unexpected error:', error);
-    return res.status(500).json({ error: 'Unexpected error occurred' });
+    return NextResponse.json({ error: 'Unexpected error occurred' });
   }
 }
