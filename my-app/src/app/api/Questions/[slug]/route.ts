@@ -16,10 +16,10 @@ export interface Question {
 // API Handler untuk mengambil soal berdasarkan 'relation'
 export async function GET(
   request: NextRequest,
-  context: { params: { slug: string } }
+  { params }: { params: { slug: string } }
 ) {
-  const relation = context.params.slug;
-  console.log(relation, context.params)
+  const relation = params.slug;
+  console.log(relation, params)
   // Validasi input
   if (typeof relation !== 'string') {
     return NextResponse.json({ error: 'Invalid relation parameter' });
