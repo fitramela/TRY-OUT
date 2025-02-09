@@ -13,8 +13,8 @@ interface ResponseData {
   token?: string;
 }
 
-export async function GET(response: Response){
-    return Response.json({
+export async function GET(req: NextRequest) {
+    return NextResponse.json({
         message: "Login"
     })
 }
@@ -88,5 +88,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Terjadi kesalahan pada server" }, { status: 500 });
   }
 }
-
-
