@@ -13,22 +13,16 @@ interface ResponseData {
   token?: string;
 }
 
-export async function GET(
-  request: NextRequest,
-  context: { params: {} }
-) {
-    return NextResponse.json({
-        message: "Login"
-    })
-}
+// export async function GET(response: Response){
+//     return Response.json({
+//         message: "Login"
+//     })
+// }
 
 
-export async function POST(
-  request: NextRequest,
-  context: { params: {} }
-) {
+export async function POST(req: NextRequest) {
   try {
-    const { email, password } = await request.json();
+    const { email, password } = await req.json();
 
     if (!email || !password) {
       return NextResponse.json({ error: 'Email dan password diperlukan' }, { status: 400 });
@@ -42,6 +36,8 @@ export async function POST(
     if (!passwordRegex.test(password)) {
       return NextResponse.json({ error: 'Password harus memiliki minimal 8 karakter, terdiri dari huruf dan angka' }, { status: 400 });
     }
+
+
 
     console.log("Mengecek user di database...");
     const { data: existingUser, error: fetchError } = await supabase
@@ -92,3 +88,5 @@ export async function POST(
     return NextResponse.json({ error: "Terjadi kesalahan pada server" }, { status: 500 });
   }
 }
+
+
